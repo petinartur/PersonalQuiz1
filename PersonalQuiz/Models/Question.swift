@@ -6,14 +6,14 @@
 //
 
 struct Question {
-    let titele: String
+    let title: String
     let type: ResponseType
     let answers: [Answer]
     
     static func getQuestions() -> [Question] {
         [
             Question(
-                titele: "Какую пищу вы предпочитаете?",
+                title: "Какую пищу вы предпочитаете?",
                 type: .single,
                 answers: [
                     Answer(title: "Стейк", type: .dog),
@@ -23,7 +23,7 @@ struct Question {
                 ]
             ),
             Question(
-                titele: "Что вам нравится больше?",
+                title: "Что вам нравится больше?",
                 type: .muliple,
                 answers: [
                     Answer(title: "Плава", type: .dog),
@@ -33,7 +33,7 @@ struct Question {
                 ]
             ),
             Question(
-                titele: "Любите ли вы поездки на машине?",
+                title: "Любите ли вы поездки на машине?",
                 type: .ranged,
                 answers: [
                     Answer(title: "Ненавижу", type: .cat),
