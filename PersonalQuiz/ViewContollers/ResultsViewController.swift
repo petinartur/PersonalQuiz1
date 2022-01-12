@@ -9,21 +9,35 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    @IBOutlet var animalTypeLabe: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+
+    var choosenAnswer: [Answer]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.hidesBackButton = true
+        sortedAnimal()
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
+    private func sortedAnimal() {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let sortedAnimal = Dictionary(grouping: choosenAnswer) { $0.type }
+            .sorted { $0.value.count > $1.value.count }
+            .first?.key
+        
+        updateUI(with: sortedAnimal)
+        
     }
-    */
+    
+    private func updateUI(with animal: AnimalType?) {
+        animalTypeLabe.text = "Вы - \(animal?.rawValue ?? "🐶")!"
+        descriptionLabel.text = animal?.definition ?? ""
+        
+    }
 
 }

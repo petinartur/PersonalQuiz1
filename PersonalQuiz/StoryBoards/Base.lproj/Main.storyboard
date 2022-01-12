@@ -340,6 +340,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="animalTypeLabe" destination="NLq-BQ-uIF" id="5jl-54-lJq"/>
+                        <outlet property="descriptionLabel" destination="jSO-nY-cso" id="HSI-nu-7mK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnu-tH-Qa8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Ijh-Dd-cq6" userLabel="Exit" sceneMemberID="exit"/>
